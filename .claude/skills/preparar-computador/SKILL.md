@@ -69,9 +69,13 @@ Com a skill do motor, crie uma composição sintética de 3 s (texto animado sob
 ffprobe -v error -show_entries format=duration -of csv=p=0 exportacoes/teste-3s.mp4
 ```
 
-## 5. Registrar
+## 5. Perfil do computador
 
-Crie ou atualize `VERSOES.md` com: sistema, versões de Node, npm, FFmpeg, Python, faster-whisper, motor e skills, e o resultado do teste. **Reinicie a sessão do agente** para ele enxergar as skills novas.
+O `checar.mjs` classifica a máquina. Perfil **MODESTO** (menos de 12 GB ou menos de 8 threads) ou sem GPU NVIDIA → siga o modo leve de `docs/computador.md` e avise o aluno do tempo esperado antes de cada etapa pesada.
+
+## 6. Registrar
+
+Crie ou atualize `VERSOES.md` com: sistema, versões de Node, npm, FFmpeg, Python, faster-whisper, motor e skills, memória, processador, GPU, o perfil e quanto tempo o teste de 3 s levou. **Reinicie a sessão do agente** para ele enxergar as skills novas.
 
 ## Armadilhas
 

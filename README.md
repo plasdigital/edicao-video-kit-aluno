@@ -8,6 +8,6 @@ Transforme sua gravação em um vídeo com textos animados, gráficos, prints, m
 
 **O que se instala na hora, da fonte oficial:** Node.js, FFmpeg, Python, faster-whisper e as skills do HyperFrames (caminho principal) ou do Remotion. Elas mudam com frequência; por isso não vêm copiadas aqui.
 
-**Você precisa de:** computador, internet na configuração, um agente com acesso a arquivos e terminal (pago), sua gravação e espaço para renderizar.
+**Você precisa de:** computador (veja [o que pesa e o modo leve](docs/computador.md)), internet na configuração, um agente com acesso a arquivos e terminal (pago), sua gravação e espaço para renderizar.
 
 Ordem de leitura: [COMECE-AQUI.md](COMECE-AQUI.md) → [ferramentas](docs/ferramentas.md) → [prompts](docs/prompts.md). Imagens realistas ou 3D: [recursos extras](docs/recursos-extras.md).

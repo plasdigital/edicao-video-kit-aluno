@@ -70,3 +70,4 @@ Cortes (erros marcados, pausas) → skill `cortar-video`. Motion e legendas → 
 | `cublas64_12.dll` | GPU sem as DLLs: `--device cpu` ou instalar os pacotes da `preparar-computador` |
 | tempos deslocados numa frase | timestamp de palavra derrapou: rode com `--modelo large-v3` só se o corte depender disso |
 | transcrição vazia | vídeo sem áudio ou áudio mudo: confira o passo 1 |
+| `Unable to open file 'model.bin' in model 'small'` | existe uma pasta com o nome do modelo (`small`, `medium`) onde o comando rodou: o Whisper tenta ler a pasta como modelo. Rode da raiz do kit ou renomeie a pasta |

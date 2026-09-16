@@ -34,7 +34,10 @@ const itens = [
   ['GPU NVIDIA', run('nvidia-smi', ['--query-gpu=name', '--format=csv,noheader']), false],
 ];
 
-console.log(`Sistema: ${os.type()} ${os.release()} (${process.arch})\n`);
+const ramGB = Math.round(os.totalmem() / 1024 ** 3);
+const nucleos = os.cpus().length;
+console.log(`Sistema: ${os.type()} ${os.release()} (${process.arch})`);
+console.log(`Processador: ${os.cpus()[0]?.model.trim()} (${nucleos} threads) | Memória: ${ramGB} GB\n`);
 let faltam = 0;
 for (const [nome, versao, obrigatorio] of itens) {
   const marca = (versao ? 'OK' : obrigatorio ? 'FALTA' : 'opcional').padEnd(9);
@@ -53,4 +56,8 @@ if (!todas.some(n => /hyperframes|remotion/i.test(n))) {
   console.log('  Se ela instalou com outro nome, confira a lista acima.');
 }
 
+const gpu = itens.find(([n]) => n === 'GPU NVIDIA')[1];
+const leve = ramGB < 12 || nucleos < 8;
+console.log(`\nPerfil: ${leve ? 'MODESTO — use o modo leve (docs/computador.md)' : gpu ? 'FORTE' : 'BOM, sem GPU NVIDIA — transcrição com --modelo small'}`);
+if (ramGB < 8) console.log('  Menos de 8 GB: o render do motion pode travar. Feche o navegador e outros programas antes de renderizar.');
 console.log(faltam ? `\n${faltam} item(ns) obrigatório(s) faltando.` : '\nTudo o que é obrigatório está instalado.');
