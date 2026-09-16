@@ -71,7 +71,7 @@ ffprobe -v error -show_entries format=duration -of csv=p=0 exportacoes/teste-3s.
 
 ## 5. Perfil do computador
 
-O `checar.mjs` classifica a máquina. Perfil **MODESTO** (menos de 12 GB ou menos de 8 threads) ou sem GPU NVIDIA → siga o modo leve de `docs/computador.md` e avise o aluno do tempo esperado antes de cada etapa pesada.
+O `checar.mjs` classifica a máquina. Perfil **MODESTO** (menos de 12 GB ou menos de 8 threads) ou sem GPU NVIDIA → siga o modo leve de `docs/computador.md` e avise o aluno do tempo esperado antes de cada etapa pesada. Se o aluno não quiser esperar, apresente a opção de VPS do mesmo documento (com prós, contras e o link), sem empurrar a contratação.
 
 ## 6. Registrar
 

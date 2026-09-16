@@ -36,3 +36,48 @@ Num computador com metade disso (4 núcleos, 8 GB, sem placa NVIDIA), espere alg
 - Não ter placa NVIDIA: tudo funciona pelo processador, só mais devagar.
 - Placa AMD/Intel ou Mac: a transcrição usa o processador; no Mac com chip Apple ela é boa.
 - Pouco espaço: cada render temporário ocupa alguns GB. Deixe uns 10 GB livres.
+
+## Alternativa: rodar numa VPS
+
+Se o modo leve não bastar, dá para fazer tudo num servidor alugado e usar o seu computador só para mandar o vídeo e assistir o resultado. Indicamos a Hostinger — com o cupom **`PEDROALMEIDA`** (10% OFF): **https://www.hostg.xyz/aff_c?offer_id=6&aff_id=214984&url_id=5038**
+
+### Qual plano
+
+Nenhuma VPS da Hostinger tem placa de vídeo: a transcrição sempre roda no processador (use `--modelo small`).
+
+| Plano | vCPU | Memória | Para edição de vídeo |
+|---|---|---|---|
+| KVM 1 | 1 | 4 GB | não serve para render |
+| KVM 2 | 2 | 8 GB | só cortes e transcrição; render de motion lento e com risco de travar |
+| **KVM 4** | 4 | 16 GB | **o mínimo recomendado** para render de motion |
+| **KVM 8** | 8 | 32 GB | perto de um bom computador (sem placa de vídeo) |
+
+O preço muda com promoção e período; confira no link. Na renovação ele sobe.
+
+### Antes de contratar, pese
+
+- **É mensal, não por hora.** Não dá para ligar só na hora do render e pagar só aquilo.
+- **Vai e vem de arquivo.** A gravação sobe pela sua internet (upload costuma ser lento) e cada versão desce para você assistir. Ajuste pequeno = mais uma rodada.
+- **O agente roda lá dentro,** pelo terminal do servidor. Se você nunca usou uma VPS, comece pelo kit de VPS: https://github.com/plasdigital/vps-kit-aluno
+- **Sua gravação fica num servidor na internet.** Não abra porta para ver a prévia; apague os brutos quando terminar.
+
+### Como fica o fluxo
+
+1. Contrate o plano com **Ubuntu** e entre por SSH: `ssh root@<IP da VPS>` (o kit de VPS ensina a criar a chave e um usuário sem ser root).
+2. Instale o agente no servidor: **Claude Code** (`curl -fsSL https://claude.ai/install.sh | bash`) ou **Codex** (`npm install -g @openai/codex`, depois de ter o Node). No primeiro uso ele mostra um link para você entrar na sua conta pelo navegador do seu computador.
+3. Baixe o kit: `git clone https://github.com/plasdigital/edicao-video-kit-aluno.git` e abra o agente dentro da pasta.
+4. Peça a skill `preparar-computador` — no Linux ela usa `apt` para FFmpeg e Python e segue o quickstart do motor, que lista o que o navegador de render precisa no servidor.
+5. Envie a gravação **do seu computador** para o servidor:
+
+   ```bash
+   scp entrada/video.mp4 root@<IP da VPS>:~/edicao-video-kit-aluno/entrada/
+   ```
+
+6. Siga o fluxo normal (transcrever → cortar → editar → conferir) conversando com o agente no servidor.
+7. Traga o resultado **para o seu computador** e assista:
+
+   ```bash
+   scp root@<IP da VPS>:~/edicao-video-kit-aluno/exportacoes/final.mp4 .
+   ```
+
+   Prévia no navegador: use um túnel em vez de abrir porta — `ssh -L <porta>:localhost:<porta> root@<IP da VPS>` com a porta que o comando de prévia mostrar, e abra `http://localhost:<porta>` no seu computador.
