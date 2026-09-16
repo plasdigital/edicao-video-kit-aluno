@@ -4,7 +4,7 @@ Transforme sua gravação em uma introdução com textos animados, gráficos, pr
 
 O caminho principal usa HyperFrames localmente. As ferramentas e skills oficiais serão instaladas no seu computador; esta pasta não as contém pré-instaladas.
 
-Leia [COMECE-AQUI.md](COMECE-AQUI.md), use os [prompts](docs/prompts.md) e consulte o [mapa de ferramentas](docs/ferramentas.md). Para imagens realistas ou 3D, veja [recursos extras](docs/recursos-extras.md).
+Leia [COMECE-AQUI.md](COMECE-AQUI.md), use os [prompts](docs/prompts.md), preencha [suas preferências](docs/preferencias.md) e consulte o [mapa de ferramentas](docs/ferramentas.md). Para imagens realistas ou 3D, veja [recursos extras](docs/recursos-extras.md).
 
 Você precisa de computador, internet para configuração, agente com acesso a arquivos e terminal, sua gravação e espaço para renderizar. O agente pode ter custo próprio. Não precisa publicar no YouTube para transcrever.
 

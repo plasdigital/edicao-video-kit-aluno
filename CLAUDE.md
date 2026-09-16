@@ -2,7 +2,9 @@
 
 Esta pasta orienta edição local com HyperFrames e motion em HTML/CSS/JavaScript.
 
-Para transições e desenho de som, siga docs/transicoes-e-som.md: planejar eventos na timeline final, gerar whooshes/ticks localmente, misturar sem duplicação e verificar inteligibilidade. Entregar mapa de eventos e fontes dos efeitos com o projeto. NumPy é dependência opcional apenas para síntese em Python; checar com `python -c "import numpy; print(numpy.__version__)"`. O pacote wave faz parte do Python.
+Antes de criar uma edição, leia `docs/preferencias.md`. Ele registra gostos do dono desta pasta e vídeos de referência. Se estiver vazio, preencha com o aluno a partir de referências e da primeira prévia. Atualize depois de cada feedback com exemplo, trecho e motivo. Preferências são revisáveis.
+
+Para transições e desenho de som, siga docs/transicoes-e-som.md: planejar eventos na timeline final, usar sons apenas onde acrescentam, variar timbres quando útil, misturar sem duplicação e verificar inteligibilidade. Entregar mapa de eventos e fontes dos efeitos com o projeto. NumPy é dependência opcional apenas para síntese em Python; checar com `python -c "import numpy; print(numpy.__version__)"`. O pacote wave faz parte do Python.
 
 ## Possibilidades
 
@@ -24,7 +26,7 @@ Consulte https://hyperframes.heygen.com/quickstart. Não invente flags de inicia
 
 ## Execução
 
-Leia docs/prompts.md. Analise a fala, duração, orientação, rotação, taxa de quadros e áudio. Planeje cenas pelo significado. Preserve fonte imutável; não re-transcreva fonte inalterada. Não avance áudio em 0,6 s por padrão: diagnostique sincronização. Não corte palavras ou pausas demonstrativas. Use só dados fornecidos em gráficos; marque dados fictícios como ilustrativos.
+Leia docs/prompts.md e docs/preferencias.md. Examine os arquivos em `referencias/` e registre o que aproveitar de cada um antes do storyboard. Analise a fala, duração, orientação, rotação, taxa de quadros, espaço de cor e áudio. Planeje cenas pelo significado. Preserve fonte imutável; não re-transcreva fonte inalterada. Não avance áudio em 0,6 s por padrão: diagnostique sincronização. Não corte palavras ou pausas demonstrativas. Use só dados fornecidos em gráficos; marque dados fictícios como ilustrativos.
 
 Use HTML, CSS, SVG e JavaScript para motion; HyperFrames controla a renderização. Não use Remotion simultaneamente por padrão. Siga o contrato de timeline da versão instalada. Escolha fontes legíveis e cores do aluno. Recursos realistas são opcionais conforme docs/recursos-extras.md.
 
@@ -36,4 +38,4 @@ Não publicar/enviar/apagar originais sem prévia e autorização correspondente
 
 Comando não reconhecido: verificar PATH e reabrir terminal. Skill não disponível: verificar escopo e atualizar contexto do agente. CUDA falhou: usar CPU, não exigir placa NVIDIA. Export curto ou dessincronizado: comparar streams, cortes e timestamps. Render lento: reduzir resolução da prévia; não prometer tempo fixo. “HTML pronto” não significa “vídeo conferido”.
 
-Porquês e pré-requisitos: docs/ferramentas.md. Direção criativa: docs/prompts.md. Materiais opcionais: docs/recursos-extras.md.
+Porquês e pré-requisitos: docs/ferramentas.md. Direção criativa: docs/prompts.md e docs/preferencias.md. Materiais opcionais: docs/recursos-extras.md.

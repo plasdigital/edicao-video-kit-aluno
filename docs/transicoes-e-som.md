@@ -17,18 +17,19 @@ O código de referência compensava o corte inicial para posicionar os eventos n
 
 1. Finalize o plano de cortes e crie uma lista de eventos com tempo na timeline final, tipo de movimento, duração e intenção do som.
 2. Escolha transições motivadas: deslocamento para mudar de cena, máscara para revelar material, aproximação para destacar uma informação. Use aceleração/desaceleração suaves. Reserve transições mais fortes para mudanças de ideia.
-3. Crie whooshes para algumas trocas de cena e ticks para entradas relevantes. Não sonorize cada palavra, cada corte e cada movimento.
-4. Sintetize arquivos WAV locais com Python/NumPy e biblioteca wave ou use efeitos fornecidos com direito de uso. Instale NumPy em ambiente local do projeto se necessário. Não use caminhos do professor nem serviços externos pagos por padrão.
-5. Posicione cada som conforme o evento visual. Preserve pequenas caudas e evite estalos. Eventos antes de zero devem ser recortados de forma segura, nunca deslocar toda a trilha de voz.
-6. Faça a composição de áudio uma única vez: ou coloque os WAVs na timeline do motor ou misture uma trilha SFX com FFmpeg ao final. Não adicione a mesma trilha pelos dois caminhos.
-7. Mantenha a voz à frente. Reduza efeitos nas sílabas importantes; use ducking quando necessário. Não copie amplitudes numéricas como garantia de volume: compare o nível dos arquivos e meça a saída.
-8. Ouça em fones e alto-falantes, inclusive em mono. Confira inteligibilidade, sincronia, clipping, começo/fim e duração dos streams. O limitador não garante sozinho o true peak final depois da codificação.
-9. Entregue mapa dos eventos, script de síntese quando usado, WAVs criados e instruções de render junto ao projeto editável. Não inclua a voz do aluno em um kit público.
+3. Comece sonorizando no máximo uma mudança de cena sim, outra não; entradas comuns de motion ficam em silêncio. Um clique pode acompanhar um cursor que realmente clica. Acrescente outros sons apenas se a audição do vídeo inteiro mostrar que fazem falta.
+4. Escolha dois ou três timbres coerentes com ações diferentes, como whoosh curto, clique de cursor e impacto suave. Varie duração, textura e volume; não repita o mesmo “vup” em sequência. Dois ou três timbres são repertório, não meta de quantidade de efeitos.
+5. Sintetize arquivos WAV locais com Python/NumPy e biblioteca wave ou use efeitos fornecidos com direito de uso. Instale NumPy em ambiente local do projeto se necessário. Não use caminhos do professor nem serviços externos pagos por padrão.
+6. Posicione cada som conforme o evento visual. Preserve pequenas caudas e evite estalos. Eventos antes de zero devem ser recortados de forma segura, nunca deslocar toda a trilha de voz.
+7. Faça a composição de áudio uma única vez: ou coloque os WAVs na timeline do motor ou misture uma trilha SFX com FFmpeg ao final. Não adicione a mesma trilha pelos dois caminhos.
+8. Mantenha a voz à frente. Reduza efeitos nas sílabas importantes; use ducking quando necessário. Não copie amplitudes numéricas como garantia de volume: compare o nível dos arquivos e meça a saída.
+9. Ouça em fones e alto-falantes, inclusive em mono. Confira inteligibilidade, sincronia, clipping, começo/fim e duração dos streams. O limitador não garante sozinho o true peak final depois da codificação.
+10. Entregue mapa dos eventos, script de síntese quando usado, WAVs criados e instruções de render junto ao projeto editável. Não inclua a voz do aluno em um kit público.
 
 ## Prompt pronto
 
-> Além do motion, faça o desenho de som. Use whooshes curtos nas principais transições e ticks discretos nas entradas de ícones ou números. Siga docs/transicoes-e-som.md. Gere os efeitos localmente quando possível, sem contratar serviços. Adapte os eventos aos tempos finais após os cortes, mantenha a voz clara e evite efeitos em excesso. Preserve pistas separadas e não duplique a mixagem. Confira a exportação ouvindo o resultado e medindo níveis e duração. Entregue também os arquivos e o mapa dos efeitos para que eu possa ajustar depois.
+> Além do motion, faça um desenho de som contido. Comece com whoosh em uma mudança de cena sim, outra não; entradas comuns de motion ficam sem efeito. Use clique apenas onde houver ação de cursor e escolha até dois ou três timbres adequados às ações. Siga docs/transicoes-e-som.md. Gere os efeitos localmente quando possível, sem contratar serviços. Adapte os eventos aos tempos finais após os cortes, mantenha a voz clara e preserve pistas separadas. Ouça o vídeo inteiro para detectar repetição cansativa. Entregue também os arquivos e o mapa dos efeitos para que eu possa ajustar depois.
 
 ## Na aula
 
-Mostre uma transição primeiro sem SFX e depois com SFX, usando o mesmo trecho e volume de voz. Explique: movimento visual, antecipação curta do whoosh e toque de entrada. Mostre que uma pista de som acompanha a animação; HTML sozinho não produz esse acabamento sonoro.
+Mostre a mesma transição sem SFX e com SFX, usando o mesmo volume de voz. Depois mostre uma sequência de várias transições e como o whoosh em todas pode cansar. A decisão final é pela audição do conjunto, não pela quantidade de animações.

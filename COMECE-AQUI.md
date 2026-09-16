@@ -8,9 +8,9 @@
 
 4. Se Node.js estiver ausente e o agente não conseguir instalá-lo, use o instalador LTS de https://nodejs.org/en/download e reabra o terminal. FFmpeg e ffprobe: siga os links para seu sistema em https://ffmpeg.org/download.html. No Windows, extraia ambos e inclua a pasta bin no PATH; reabra o terminal. Evite instalar uma segunda cópia se já houver uma compatível.
 5. A instalação das skills segue https://hyperframes.heygen.com/quickstart. O comando documentado é `npx hyperframes skills update`; confira o destino informado pelo instalador. Instalar a skill não substitui criar o projeto e baixar o motor de renderização. O agente deve seguir o quickstart para concluir essa parte.
-6. Crie `entrada/` para o vídeo original e `referencias/` para prints, logos e exemplos. Informe suas cores e quais imagens podem aparecer. Não é necessário Git, YouTube, conta HeyGen ou servidor para a renderização local básica.
+6. Crie `entrada/` para o vídeo original e `referencias/` para prints, logos e exemplos. Informe suas cores e quais imagens podem aparecer. Coloque também um ou dois vídeos seus que você gostou e, se houver, um que não gostou. Anote o porquê em [docs/preferencias.md](docs/preferencias.md). Não é necessário Git, YouTube, conta HeyGen ou servidor para a renderização local básica.
 7. Envie o prompt de edição de [docs/prompts.md](docs/prompts.md). O agente analisa o arquivo, obtém uma transcrição com tempos quando necessária e cria uma prévia.
-8. Assista à prévia com áudio. Peça um ajuste concreto, por exemplo: “No trecho sobre automação, aumente o texto e coloque minha câmera na lateral com borda laranja”.
+8. Assista à prévia com áudio. Peça um ajuste concreto, por exemplo: “No trecho sobre automação, aumente o texto e coloque minha câmera na lateral com borda laranja”. Diga também o que ficou bom e deve permanecer; o agente registra isso em `docs/preferencias.md` para as próximas edições.
 9. Receba `exportacoes/final.mp4`, projeto editável e relatório de verificação. Confira a frase final, a sincronização e os textos antes de usar.
 
 Se um comando não existir na versão instalada, envie o erro ao agente. Ele deve consultar `--help` e a documentação, sem improvisar comandos antigos. Uma prévia no navegador não comprova que o MP4 está correto.
