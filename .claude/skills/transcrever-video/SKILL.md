@@ -1,6 +1,6 @@
 ---
 name: transcrever-video
-description: Transcreve a gravação do aluno com tempo por palavra (faster-whisper, local e gratuito), corrige os nomes de ferramenta que o Whisper erra e mede as pausas no áudio. Use SEMPRE antes de planejar qualquer edição, legenda ou animação sincronizada com a fala — a edição inteira depende de uma transcrição conferida.
+description: Transcreve a gravação do aluno com tempo por palavra (faster-whisper, local e gratuito) e corrige os nomes de ferramenta que o Whisper erra. Use SEMPRE antes de planejar qualquer edição, legenda ou animação sincronizada com a fala — a edição inteira depende de uma transcrição conferida.
 ---
 
 # Transcrever o vídeo
@@ -51,13 +51,9 @@ ffmpeg -ss <inicio> -t 6 -i entrada/<video> -vn transcricao/trecho.wav
 
 Não "melhore" a fala do aluno: a transcrição registra o que foi dito. Só corrija o que o Whisper ouviu errado.
 
-## 5. Pausas (quando for cortar)
+## 5. Próximo passo
 
-```bash
-python <skill>/silencios.py entrada/<video> -o transcricao/silencios.json
-```
-
-Mede no áudio (não na transcrição) e devolve os trechos que dá para aparar, deixando respiro. `--limiar 0.8` é conservador, `0.5` agressivo. **Mostre a lista antes de cortar**: pausa de efeito ou de demonstração na tela fica. Não aumente `--merge-gap` acima de 0.25 — apaga palavra curta sem avisar.
+Cortes (erros marcados, pausas) → skill `cortar-video`. Motion e legendas → skill do motor, usando o `flat.txt`.
 
 ## O que a edição usa daqui
 
@@ -65,7 +61,6 @@ Mede no áudio (não na transcrição) e devolve os trechos que dá para aparar,
 |---|---|
 | `flat.txt` | entrada de texto na palavra certa, legendas, cortes |
 | `transcricao.md` | ler o vídeo, planejar cenas pelo significado |
-| `silencios.json` | cortes de pausa aprovados |
 
 ## Armadilhas
 

@@ -16,9 +16,10 @@
 > Use a skill transcrever-video no vídeo de entrada/. Depois me mostre as correções de termos antes de aplicar e me diga o que achou estranho na transcrição.
 
    A transcrição roda no seu computador; não precisa publicar no YouTube. Nome de ferramenta que o Whisper errar vai para [docs/glossario.md](docs/glossario.md).
-7. **Registre suas referências** em [docs/preferencias.md](docs/preferencias.md) com o agente.
-8. **Edite.** Envie o prompt de edição de [docs/prompts.md](docs/prompts.md). O agente cria uma prévia.
-9. **Assista com áudio e ajuste.** Peça uma coisa concreta, por exemplo: “No trecho sobre automação, aumente o texto e coloque minha câmera na lateral com borda laranja”. Diga também o que ficou bom; o agente registra em `docs/preferencias.md` para as próximas edições.
-10. **Receba** `exportacoes/final.mp4`, o projeto editável e o relatório da skill `conferir-video`. Assista inteiro antes de usar.
+7. **Corte (opcional).** Se você gravou falando “erro erro erro” quando errou, ou quer aparar pausas, peça: “Use a skill cortar-video, me mostre o plano de cortes antes de aplicar”.
+8. **Registre suas referências** em [docs/preferencias.md](docs/preferencias.md) com o agente.
+9. **Edite.** Envie o prompt de edição de [docs/prompts.md](docs/prompts.md). O agente cria uma prévia.
+10. **Assista com áudio e ajuste.** Peça uma coisa concreta, por exemplo: “No trecho sobre automação, aumente o texto e coloque minha câmera na lateral com borda laranja”. Diga também o que ficou bom; o agente registra em `docs/preferencias.md` para as próximas edições.
+11. **Receba** `exportacoes/final.mp4`, o projeto editável e o relatório da skill `conferir-video`. Assista inteiro antes de usar.
 
 Se um comando não existir na versão instalada, envie o erro ao agente. Ele consulta `--help` e a documentação, sem improvisar comandos antigos. Uma prévia no navegador não comprova que o MP4 está correto.

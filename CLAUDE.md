@@ -12,6 +12,7 @@ Ficam em `.claude/skills/` (Claude) e `.agents/skills/` (ChatGPT/Codex) — o me
 |---|---|
 | `preparar-computador` | primeira vez, comando "não existe", atualizar ferramentas |
 | `transcrever-video` | **sempre antes de planejar a edição** |
+| `cortar-video` | tirar erros marcados e pausas, aplicar cortes, juntar trechos, mixar som, nivelar volume (FFmpeg) |
 | `conferir-video` | depois de todo render completo, antes de entregar |
 
 As skills do motor **não vêm no kit**: HyperFrames (`npx hyperframes skills update`) e Remotion (`npx skills add remotion-dev/skills`) instalam-se da origem oficial, e é assim que se atualizam.
@@ -21,9 +22,10 @@ As skills do motor **não vêm no kit**: HyperFrames (`npx hyperframes skills up
 1. Ambiente pronto (`preparar-computador`).
 2. Transcrição com tempo por palavra, termos corrigidos e lida por inteiro (`transcrever-video`).
 3. Referências em `referencias/` examinadas e anotadas em `docs/preferencias.md`.
-4. Plano de cenas pelo significado da fala → prévia.
-5. Feedback do aluno → ajuste → registro em `docs/preferencias.md`.
-6. Export → `conferir-video` → entrega.
+4. Cortes com FFmpeg, plano aprovado antes (`cortar-video`); vídeo cortado transcrito de novo.
+5. Plano de cenas pelo significado da fala → prévia.
+6. Feedback do aluno → ajuste → registro em `docs/preferencias.md`.
+7. Som e volume (`cortar-video`, receitas) → export → `conferir-video` → entrega.
 
 ## Possibilidades
 
@@ -34,7 +36,8 @@ As skills do motor **não vêm no kit**: HyperFrames (`npx hyperframes skills up
 | Preparar ambiente (instala) | skill `preparar-computador`; preservar instalações existentes |
 | Transcrever (cria cache local) | skill `transcrever-video` → `transcricao/flat.txt` e `transcricao/transcricao.md` |
 | Corrigir termos da transcrição (altera arquivo) | `corrigir_termos.py` sem `--aplicar`, mostrar, aplicar com OK |
-| Medir pausas (somente leitura) | `silencios.py` da skill `transcrever-video` |
+| Achar erros marcados / medir pausas (somente leitura) | `achar-marcadores.py`, `silencios.py`, `movimento.py` da skill `cortar-video` |
+| Cortar, juntar, mixar, nivelar (cria arquivos) | skill `cortar-video`; `--dry-run` aprovado antes |
 | Editar e renderizar (cria arquivos) | skills oficiais do motor instalado; `projeto/`, prévias e `exportacoes/` |
 | Efeitos sonoros (cria arquivos) | `docs/transicoes-e-som.md` |
 | Conferir export (somente leitura) | skill `conferir-video` |
@@ -75,6 +78,7 @@ Na concatenação, normalize codecs, dimensões, fps, timescale e espaço de cor
 | skill "não existe" | sessão aberta antes da instalação, ou instalada só em `.claude/` ou só em `.agents/` |
 | `cublas64_12.dll` | GPU sem DLLs: `--device cpu` ou pacotes da `preparar-computador` |
 | transcrição lenta | CPU com modelo `medium`: usar `--modelo small` |
+| legenda fora de tempo após corte | usou a transcrição do original: transcrever o cortado |
 | export curto ou dessincronizado | comparar streams, cortes e timestamps (`conferir-video`) |
 | render lento | reduzir resolução da prévia; não prometer tempo fixo |
 | "HTML pronto" | não significa "vídeo conferido" |

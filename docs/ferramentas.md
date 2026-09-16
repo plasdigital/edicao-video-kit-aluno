@@ -11,7 +11,7 @@ Ramo opcional: imagens/vídeos externos → licença e fundo verificados → com
 | Agente: Claude Code ou ChatGPT (Codex) | Para executar por conversa | Sem edição comandada por IA | Pode editar manualmente, fora da aula |
 | Node.js/npm | HyperFrames e instalador de skills | Comandos não executam | Não para renderizar neste fluxo |
 | HyperFrames e navegador de renderização | Composição e MP4 | Não renderiza | Pode preparar mídia antes |
-| Skills do kit (preparar, transcrever, conferir) | Sempre; já vêm na pasta | Agente improvisa cada etapa | Vêm prontas |
+| Skills do kit (preparar, transcrever, cortar, conferir) | Sempre; já vêm na pasta | Agente improvisa cada etapa | Vêm prontas |
 | Skills oficiais do motor | Fluxo guiado da aula | Agente sem instruções específicas | Tecnicamente sim; a skill `preparar-computador` instala |
 | FFmpeg/ffprobe | Cortes, áudio e verificação do fluxo | Faltam inspeção/acabamento | Pode planejar antes |
 | Gravação | Editar sua fala | Só exemplo sintético | Sim, para testar instalação |

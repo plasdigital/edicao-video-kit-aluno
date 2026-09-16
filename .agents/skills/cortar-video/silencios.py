@@ -8,7 +8,7 @@ um respiro (senao a emenda fica robotica e a fala colada demais).
 
 Uso:
   silencios.py bruto.mp4 [--limiar 0.6] [--merge-gap 0.15] [--noise -30] [--dur-min 0.35]
-  silencios.py entrada/video.mp4 -o transcricao/silencios.json
+  silencios.py entrada/video.mp4 -o cortes/silencios.json
 
   --limiar     so apara pausa MAIOR que isso. 0.5 agressivo, 0.6 equilibrado, 0.8 conservador
   --noise      o que conta como silencio, em dB (default -30)
