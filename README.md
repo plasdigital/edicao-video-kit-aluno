@@ -1,13 +1,13 @@
 # Edição de vídeo Kit Aluno
 
-Transforme sua gravação em uma introdução com textos animados, gráficos, prints e mudanças de enquadramento. Abra esta pasta no seu agente de IA e converse em português.
+Transforme sua gravação em um vídeo com textos animados, gráficos, prints, mudanças de enquadramento e efeitos sonoros. Abra esta pasta no **Claude Code** ou no **ChatGPT (Codex)** e converse em português.
 
-O caminho principal usa HyperFrames localmente. As ferramentas e skills oficiais serão instaladas no seu computador; esta pasta não as contém pré-instaladas.
+**O que vem na pasta**
+- Três skills prontas, para os dois agentes (`.claude/skills/` e `.agents/skills/`): **preparar-computador**, **transcrever-video** (Whisper local, com correção de termos) e **conferir-video**.
+- O manual do agente (`CLAUDE.md` e `AGENTS.md`), os [prompts](docs/prompts.md), suas [preferências](docs/preferencias.md), o [glossário da transcrição](docs/glossario.md) e o guia de [transições e som](docs/transicoes-e-som.md).
 
-Leia [COMECE-AQUI.md](COMECE-AQUI.md), use os [prompts](docs/prompts.md), preencha [suas preferências](docs/preferencias.md) e consulte o [mapa de ferramentas](docs/ferramentas.md). Para imagens realistas ou 3D, veja [recursos extras](docs/recursos-extras.md).
+**O que se instala na hora, da fonte oficial:** Node.js, FFmpeg, Python, faster-whisper e as skills do HyperFrames (caminho principal) ou do Remotion. Elas mudam com frequência; por isso não vêm copiadas aqui.
 
-Você precisa de computador, internet para configuração, agente com acesso a arquivos e terminal, sua gravação e espaço para renderizar. O agente pode ter custo próprio. Não precisa publicar no YouTube para transcrever.
+**Você precisa de:** computador, internet na configuração, um agente com acesso a arquivos e terminal (pago), sua gravação e espaço para renderizar.
 
-Este kit contém o procedimento; o exemplo final gravado da aula ainda não está incluído.
-
-Inclui [transições e efeitos sonoros](docs/transicoes-e-som.md): síntese local de whooshes e ticks, sincronização e mixagem com a voz. As instruções em AGENTS.md e CLAUDE.md orientam o agente do aluno.
+Ordem de leitura: [COMECE-AQUI.md](COMECE-AQUI.md) → [ferramentas](docs/ferramentas.md) → [prompts](docs/prompts.md). Imagens realistas ou 3D: [recursos extras](docs/recursos-extras.md).

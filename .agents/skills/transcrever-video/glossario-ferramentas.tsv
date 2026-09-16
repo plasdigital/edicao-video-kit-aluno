@@ -1,0 +1,48 @@
+troca	\bSup(?:er|ra)\s?base\b	Supabase
+troca	\bSquabase\b	Supabase
+troca	\bBase\s?Role\b	Baserow
+troca	\bNoco\s?DB\b	NocoDB
+troca	\bapifi\b	Apify
+troca	\b(?:CRPAPI|CRP\s?API|CERP\s?API|CRPNI)\b	SerpAPI
+troca	\bN2[NK]\b	n8n
+troca	\bNetween\w*\b	n8n
+troca	\bZAPI\b	Z-API
+troca	\bLinquedinho\b	LinkedIn
+troca	\bN8M\b	n8n
+troca	\bNucu\s?DB\b	NocoDB
+troca	\bAPI\s+Evolution\b	Evolution API
+troca	\bP-?Revolution\b	Evolution API
+troca	\bBtricks?\s?24\b	Bitrix24
+troca	\bPipe\s?Drive\b	Pipedrive
+troca	\bSupa\s?Base\b	Supabase
+troca	\bclick-?up\b	ClickUp
+troca	\bchat\s?EPT\b	ChatGPT
+troca	\b(?:N820|NUEN8N)\b	n8n
+troca	\bBase\s?Roll\b	Baserow
+troca	\b(?:Benichet|E-Tricks)\b	Bitrix24
+troca	\bPGA\s?admin\b	pgAdmin
+troca	\bArttable\b	Airtable
+troca	\bPortain\b	Portainer
+troca	\bRTABLE\b	Airtable
+troca	\bsupab\b	Supabase
+troca	\bN8N\b	n8n
+troca	\bweb\s+hooks\b	webhooks
+troca	\bweb\s+hook\b	webhook
+troca	\bChat\s?H(?:ot|URT|urt)\b	Chatwoot
+troca	\bChat\s?-?\s?out\b	Chatwoot
+troca	\bChatoot\b	Chatwoot
+troca	\bCloud Code\b	Claude Code
+troca	\bUAZ\s?e?\s?API\b	Uazapi
+troca	\bUaz\s?e?\s?API\b	Uazapi
+troca	\bWin8n\b	n8n
+troca	\bUnit\s*-?\s*to\s*-?\s*N\b	n8n
+troca	\bSubabase\b	Supabase
+troca	\bcha(?:chute|jute|xute)\b	Chatwoot
+troca	\bCachajute\b	Chatwoot
+troca	\bchat\s?root\b	Chatwoot
+troca	\bchat\s?-?\s?wood\b	Chatwoot
+troca	\bAbhut\b	Chatwoot
+troca	\bCloud\s?Cult\b	Claude Code
+troca	\bRochinger\b	Hostinger
+troca	\bRochen\b	Hostinger
+troca	\banti\s?-?\s?grab\b	Antigravity

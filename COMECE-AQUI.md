@@ -1,16 +1,24 @@
 # Comece aqui
 
-1. Baixe e extraia a pasta em um local em que você possa criar arquivos (óbvio). Não trabalhe dentro do ZIP.
-2. Abra a pasta no aplicativo do seu agente de IA, com acesso local a arquivos e terminal. Use sua própria conta e confira os limites do seu plano. A aula usa Astra; o procedimento não depende de uma conta do professor.
-3. Envie o prompt de preparação abaixo. O agente deve conferir o sistema operacional e o que já existe antes de instalar.
+1. **Tenha um agente de IA instalado.** Serve qualquer um dos dois (ambos são pagos, confira o plano):
+   - **Claude Code** — https://claude.com/pricing
+   - **ChatGPT com Codex** — https://chatgpt.com/codex
+2. **Baixe esta pasta** (botão *Code → Download ZIP* no GitHub) e extraia num lugar em que você possa criar arquivos. Não trabalhe dentro do ZIP.
+3. **Abra a pasta no agente**, com acesso a arquivos e terminal, na sua própria conta.
+4. **Prepare o computador.** Envie:
 
-> Leia AGENTS.md e CLAUDE.md. Prepare esta pasta para edição local com HyperFrames, HTML, CSS e JavaScript. Confira Node.js, npm, FFmpeg e ffprobe; instale somente o que faltar por fontes oficiais, respeitando as permissões do sistema. Instale as skills oficiais de HyperFrames no escopo deste projeto. Siga a documentação oficial atual, crie o projeto em projeto/ e faça uma renderização sintética de 3 segundos. Registre versões, comandos e resultado em VERSOES.md. Não use serviços pagos de geração, não publique nada e não altere outros projetos.
+> Use a skill preparar-computador. Confira o que já existe, instale só o que faltar pelas fontes oficiais, instale as skills oficiais do HyperFrames nesta pasta, faça o render de teste de 3 segundos e registre tudo em VERSOES.md. Me diga antes o que vai instalar. Não use serviços pagos, não publique nada e não altere outros projetos.
 
-4. Se Node.js estiver ausente e o agente não conseguir instalá-lo, use o instalador LTS de https://nodejs.org/en/download e reabra o terminal. FFmpeg e ffprobe: siga os links para seu sistema em https://ffmpeg.org/download.html. No Windows, extraia ambos e inclua a pasta bin no PATH; reabra o terminal. Evite instalar uma segunda cópia se já houver uma compatível.
-5. A instalação das skills segue https://hyperframes.heygen.com/quickstart. O comando documentado é `npx hyperframes skills update`; confira o destino informado pelo instalador. Instalar a skill não substitui criar o projeto e baixar o motor de renderização. O agente deve seguir o quickstart para concluir essa parte.
-6. Crie `entrada/` para o vídeo original e `referencias/` para prints, logos e exemplos. Informe suas cores e quais imagens podem aparecer. Coloque também um ou dois vídeos seus que você gostou e, se houver, um que não gostou. Anote o porquê em [docs/preferencias.md](docs/preferencias.md). Não é necessário Git, YouTube, conta HeyGen ou servidor para a renderização local básica.
-7. Envie o prompt de edição de [docs/prompts.md](docs/prompts.md). O agente analisa o arquivo, obtém uma transcrição com tempos quando necessária e cria uma prévia.
-8. Assista à prévia com áudio. Peça um ajuste concreto, por exemplo: “No trecho sobre automação, aumente o texto e coloque minha câmera na lateral com borda laranja”. Diga também o que ficou bom e deve permanecer; o agente registra isso em `docs/preferencias.md` para as próximas edições.
-9. Receba `exportacoes/final.mp4`, projeto editável e relatório de verificação. Confira a frase final, a sincronização e os textos antes de usar.
+   Depois, **feche e abra a sessão do agente** para ele enxergar as skills novas. Prefere Remotion? Troque "HyperFrames" por "Remotion" no pedido.
+5. **Coloque o material.** Crie `entrada/` com o vídeo original e `referencias/` com prints, logos e exemplos. Coloque um ou dois vídeos que você gostou e, se houver, um que não gostou. Diga suas cores. Nada disso vai para o GitHub.
+6. **Transcreva.** Envie:
 
-Se um comando não existir na versão instalada, envie o erro ao agente. Ele deve consultar `--help` e a documentação, sem improvisar comandos antigos. Uma prévia no navegador não comprova que o MP4 está correto.
+> Use a skill transcrever-video no vídeo de entrada/. Depois me mostre as correções de termos antes de aplicar e me diga o que achou estranho na transcrição.
+
+   A transcrição roda no seu computador; não precisa publicar no YouTube. Nome de ferramenta que o Whisper errar vai para [docs/glossario.md](docs/glossario.md).
+7. **Registre suas referências** em [docs/preferencias.md](docs/preferencias.md) com o agente.
+8. **Edite.** Envie o prompt de edição de [docs/prompts.md](docs/prompts.md). O agente cria uma prévia.
+9. **Assista com áudio e ajuste.** Peça uma coisa concreta, por exemplo: “No trecho sobre automação, aumente o texto e coloque minha câmera na lateral com borda laranja”. Diga também o que ficou bom; o agente registra em `docs/preferencias.md` para as próximas edições.
+10. **Receba** `exportacoes/final.mp4`, o projeto editável e o relatório da skill `conferir-video`. Assista inteiro antes de usar.
+
+Se um comando não existir na versão instalada, envie o erro ao agente. Ele consulta `--help` e a documentação, sem improvisar comandos antigos. Uma prévia no navegador não comprova que o MP4 está correto.

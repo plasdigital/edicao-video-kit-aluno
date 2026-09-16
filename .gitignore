@@ -7,3 +7,6 @@ exportacoes/
 *.mp4
 *.mov
 *.MOV
+.venv/
+transcricao/
+conferencia/

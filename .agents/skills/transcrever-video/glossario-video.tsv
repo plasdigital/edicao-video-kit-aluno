@@ -1,0 +1,15 @@
+troca	\bH(?:ype|ide|ai|yper)\s?-?\s?Frames?\b	HyperFrames
+troca	\bRe\s?motion\b	Remotion
+troca	\bF\s?F\s?-?\s?M\s?PEG\b	FFmpeg
+troca	\befe\s?efe\s?(?:em\s?)?peg\b	FFmpeg
+troca	\bUísper\b	Whisper
+troca	\bCloud Code\b	Claude Code
+troca	\bCloud\s?Cult\b	Claude Code
+troca	\bChat\s?G\s?P\s?T\b	ChatGPT
+troca	\bchat\s?EPT\b	ChatGPT
+troca	\bHey\s?Gen\b	HeyGen
+troca	\bJava\s?Script\b	JavaScript
+aviso	\bremoção\b	Remotion? (ou a palavra 'remoção')
+aviso	\bo Cloud\b	o Claude? (checar o contexto)
+aviso	\bcodecs?\b	Codex? (em aula de vídeo, codec costuma ser codec mesmo)
+aviso	\bwhisky\b	Whisper?
