@@ -19,6 +19,8 @@ Uso:
              O nome bate com --fonte nome=arquivo.mp4; a fonte posicional e o default.
   --preview  720p e preset ultrafast: pra conferir o corte sem queimar tempo no final.
   --dry-run  so mostra o plano (quantos cortes, duracao antes/depois), nao renderiza.
+  --borrar   urls.json do borrar-urls.py (varrido no BRUTO): borra a barra de endereco do
+             navegador no mesmo render do corte, sem recomprimir a tela uma segunda vez.
 
 POR QUE RE-ENCODA: corte sem re-encode (-c copy) so cai em keyframe, entao o corte
 sai varios frames longe de onde foi pedido - o suficiente pra comer palavra ou
@@ -112,6 +114,7 @@ def main():
     p.add_argument("--preview", action="store_true")
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--crf", type=int, default=18)
+    p.add_argument("--borrar", metavar="urls.json")
     args = p.parse_args()
 
     if not shutil.which("ffmpeg"):
@@ -142,11 +145,23 @@ def main():
         if faltando:
             sys.exit(f"erro: --camera cita fonte(s) sem arquivo: {faltando}. Usa --fonte-extra nome=arquivo.")
 
+    borrao = None
+    if args.borrar:
+        # o nome tem hifen, entao entra por importlib
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("borrar_urls", Path(__file__).with_name("borrar-urls.py"))
+        borrar_urls = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(borrar_urls)
+        plano = json.loads(Path(args.borrar).read_text(encoding="utf-8"))
+        borrao = (borrar_urls, plano)
+
     dur_final = sum(b - a for a, b in manter)
     removido = total - dur_final
     print(f"fonte     {principal.name}  {total / 60:.2f}min  {info['w']}x{info['h']} @ {info['fps']}fps")
     print(f"cortes    {len(remover)} trechos removidos, {removido:.1f}s ({removido / total * 100:.1f}%)")
     print(f"final     {dur_final / 60:.2f}min em {len(manter)} segmentos")
+    if borrao:
+        print(f"borrar    barra de endereco em {len(borrao[1]['trechos'])} trechos do bruto")
     if args.dry_run:
         print("\nsegmentos que ficam:")
         for i, (a, b) in enumerate(manter, 1):
@@ -167,9 +182,15 @@ def main():
             saida = tmp / f"seg{i:04d}.mp4"
             fade_out = max(0.0, dur - FADE)
             af = f"afade=t=in:st=0:d={FADE},afade=t=out:st={fade_out:.3f}:d={FADE}"
+            vf = f"{escala},fps={info['fps']}"
+            # os trechos estao no tempo da fonte principal; camera extra tem outro enquadramento
+            if borrao and fonte_seg == principal:
+                fb = borrao[0].filtro(borrao[1]["caixa"], borrao[1]["trechos"], desloc=a, dur=dur)
+                if fb:
+                    vf = f"{fb},{vf}"   # borra antes de escalar: a caixa esta em pixels da fonte
             cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error",
                    "-ss", f"{a:.3f}", "-i", str(fonte_seg), "-t", f"{dur:.3f}",
-                   "-vf", f"{escala},fps={info['fps']}", "-af", af,
+                   "-vf", vf, "-af", af,
                    "-c:v", "libx264", "-preset", preset, "-crf", str(crf),
                    "-pix_fmt", "yuv420p",
                    "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2",

@@ -1,6 +1,4 @@
-# Agente de edição (ChatGPT/Codex e outros agentes)
-
-Mesmo conteúdo do CLAUDE.md. As skills desta pasta estão em `.agents/skills/`.
+# Agente de edição
 
 Esta pasta edita a gravação do aluno com IA: transcrição local, motion em HTML/CSS/JavaScript renderizado pelo HyperFrames (ou Remotion), efeitos sonoros e conferência do MP4.
 
